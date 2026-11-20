@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Transaksi & Pendaftaran Member | Kopi Nusantara</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar-promo text-center">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <div class="d-none d-md-block">
+        <i class="fas fa-shield-alt text-warning me-1"></i> Transaksi Aman 100% dengan Konfirmasi WhatsApp & Faktur Resmi
+      </div>
+      <div class="mx-auto mx-md-0">
+        Gunakan kupon <span class="badge bg-warning text-dark font-monospace">DISKON30</span> untuk potongan harga 30%!
+      </div>
+      <div class="d-none d-lg-block">
+        <a href="produk.html" class="text-white text-decoration-none">&larr; Kembali ke Katalog</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Responsive Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-icon-wrapper">
+          <i class="fas fa-mug-hot"></i>
+        </span>
+        <span>Kopi Nusantara</span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars fa-lg text-dark"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <i class="fas fa-home me-1"></i> Beranda
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profil.html">
+              <i class="fas fa-building me-1"></i> Profil Roastery
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="produk.html">
+              <i class="fas fa-coffee me-1"></i> Katalog Penjualan
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="forum.html">
+              <i class="fas fa-comments me-1"></i> Forum Komunitas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="transaksi.html">
+              <i class="fas fa-file-invoice-dollar me-1"></i> Formulir Order
+            </a>
+          </li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-nav-order" href="transaksi.html">
+              <i class="fas fa-shopping-cart me-1"></i> Beli Online
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="py-5" style="background: linear-gradient(135deg, #2c1810, #3e2723); color: #fff;">
+    <div class="container text-center py-2">
+      <span class="badge badge-roast px-3 py-2 mb-3"><i class="fas fa-receipt me-1"></i> PUSAT LAYANAN & FORMULIR</span>
+      <h1 class="display-5 font-heading text-white mb-2">Formulir Pemesanan & Pendaftaran</h1>
+      <p class="text-light max-w-600 mx-auto mb-0">
+        Silakan isi data pemesanan kopi specialty Anda atau daftarkan diri menjadi anggota VIP komunitas Kopi Nusantara.
+      </p>
+    </div>
+  </header>
+
+  <!-- Forms Section with Nav Tabs -->
+  <section class="py-5">
+    <div class="container">
+
+      <!-- Navigation Tabs -->
+      <ul class="nav nav-pills justify-content-center mb-5 gap-2" id="formTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active rounded-pill px-4 py-2 fw-semibold" id="tab-order" data-bs-toggle="pill" data-bs-target="#content-order" type="button" role="tab" aria-controls="content-order" aria-selected="true">
+            <i class="fas fa-shopping-cart me-2"></i>1. Formulir Transaksi Pemesanan
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link rounded-pill px-4 py-2 fw-semibold" id="tab-member" data-bs-toggle="pill" data-bs-target="#content-member" type="button" role="tab" aria-controls="content-member" aria-selected="false">
+            <i class="fas fa-id-card me-2"></i>2. Pendaftaran Member VIP
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link rounded-pill px-4 py-2 fw-semibold" id="tab-feedback" data-bs-toggle="pill" data-bs-target="#content-feedback" type="button" role="tab" aria-controls="content-feedback" aria-selected="false">
+            <i class="fas fa-comment-dots me-2"></i>3. Umpan Balik & Masukan
+          </button>
+        </li>
+      </ul>
+
+      <!-- Tabs Content -->
+      <div class="tab-content" id="formTabsContent">
+
+        <!-- ===================================================================
+             TAB 1: FORMULIR TRANSAKSI PEMESANAN PRODUK
+             =================================================================== -->
+        <div class="tab-pane fade show active" id="content-order" role="tabpanel" aria-labelledby="tab-order">
+          <div class="row g-4">
+
+            <!-- Left: Order Form -->
+            <div class="col-lg-8">
+              <div class="form-card">
+                <div class="d-flex align-items-center gap-2 mb-4 border-bottom pb-3">
+                  <div class="feature-icon mb-0" style="width: 44px; height: 44px; font-size: 1.2rem;">
+                    <i class="fas fa-file-invoice"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-heading mb-0">Detail Data Transaksi Pembeli</h4>
+                    <small class="text-muted">Isi identitas penerima dan spesifikasi produk kopi yang diinginkan</small>
+                  </div>
+                </div>
+
+                <form id="formOrderTransaction" novalidate>
+
+                  <!-- 1. Data Diri Penerima -->
+                  <div class="row g-3 mb-4">
+                    <div class="col-12">
+                      <h6 class="text-uppercase fw-bold text-secondary small border-start border-3 border-warning ps-2">Informasi Penerima Paket</h6>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="orderBuyerName" class="form-label">Nama Lengkap Penerima <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="orderBuyerName" placeholder="Contoh: Dimas Aditya Pratama" required>
+                      <div class="invalid-feedback">Nama lengkap wajib diisi.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="orderBuyerPhone" class="form-label">Nomor WhatsApp / HP Aktif <span class="text-danger">*</span></label>
+                      <input type="tel" class="form-control" id="orderBuyerPhone" placeholder="Contoh: 081234567890" pattern="[0-9]{10,14}" required>
+                      <div class="invalid-feedback">Nomor WhatsApp valid wajib diisi (10-14 digit angka).</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="orderBuyerEmail" class="form-label">Alamat Email <span class="text-danger">*</span></label>
+                      <input type="email" class="form-control" id="orderBuyerEmail" placeholder="nama@email.com" required>
+                      <div class="invalid-feedback">Format email tidak valid.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="orderPostalCode" class="form-label">Kode Pos <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="orderPostalCode" placeholder="Contoh: 55213" pattern="[0-9]{5}" required>
+                      <div class="invalid-feedback">Kode pos 5 digit angka wajib diisi.</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="orderBuyerAddress" class="form-label">Alamat Lengkap Pengiriman <span class="text-danger">*</span></label>
+                      <textarea class="form-control" id="orderBuyerAddress" rows="3" placeholder="Sebutkan nama jalan, nomor rumah, RT/RW, kelurahan, kecamatan, dan kota/kabupaten..." required></textarea>
+                      <div class="invalid-feedback">Alamat lengkap pengiriman wajib diisi.</div>
+                    </div>
+                  </div>
+
+                  <!-- 2. Pemilihan Produk & Varian -->
+                  <div class="row g-3 mb-4">
+                    <div class="col-12">
+                      <h6 class="text-uppercase fw-bold text-secondary small border-start border-3 border-warning ps-2">Pilihan Kopi & Spesifikasi Gilingan</h6>
+                    </div>
+                    <div class="col-md-8">
+                      <label for="orderProduct" class="form-label">Pilih Produk Kopi / Peralatan <span class="text-danger">*</span></label>
+                      <select class="form-select" id="orderProduct" required>
+                        <option value="gayo-wine" selected>Aceh Gayo Wine Process 250g - Rp 125.000</option>
+                        <option value="toraja-sapan">Toraja Sapan Specialty 250g - Rp 115.000</option>
+                        <option value="flores-bajawa">Flores Bajawa Honey 250g - Rp 105.000</option>
+                        <option value="kintamani-honey">Bali Kintamani Natural 250g - Rp 110.000</option>
+                        <option value="temanggung-robusta">Temanggung Robusta Fine 250g - Rp 75.000</option>
+                        <option value="v60-dripper-set">V60 Dripper & Server 02 Set - Rp 185.000</option>
+                        <option value="manual-hand-grinder">Manual Grinder Precision 38mm - Rp 260.000</option>
+                        <option value="bundling-barista">Paket Bundling Barista Starter Pack - Rp 340.000</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="orderQuantity" class="form-label">Jumlah (Pack/Set) <span class="text-danger">*</span></label>
+                      <input type="number" class="form-control" id="orderQuantity" min="1" max="50" value="1" required>
+                    </div>
+
+                    <!-- Pilihan Gilingan -->
+                    <div class="col-12">
+                      <label class="form-label d-block">Tingkat Gilingan Kopi (Grind Size Gratis) <span class="text-danger">*</span></label>
+                      <div class="row g-2">
+                        <div class="col-sm-6 col-md-3">
+                          <input type="radio" class="btn-check" name="grindOption" id="grindWhole" value="Biji Utuh" checked>
+                          <label class="btn btn-outline-secondary w-100 text-start py-2 px-3 small" for="grindWhole">
+                            <i class="fas fa-cubes me-1"></i> Biji Utuh (Beans)
+                          </label>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                          <input type="radio" class="btn-check" name="grindOption" id="grindCoarse" value="Giling Kasar">
+                          <label class="btn btn-outline-secondary w-100 text-start py-2 px-3 small" for="grindCoarse">
+                            <i class="fas fa-glass-whiskey me-1"></i> Kasar (Cold Brew)
+                          </label>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                          <input type="radio" class="btn-check" name="grindOption" id="grindMedium" value="Giling Sedang">
+                          <label class="btn btn-outline-secondary w-100 text-start py-2 px-3 small" for="grindMedium">
+                            <i class="fas fa-filter me-1"></i> Sedang (V60/Aeropress)
+                          </label>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                          <input type="radio" class="btn-check" name="grindOption" id="grindFine" value="Giling Halus">
+                          <label class="btn btn-outline-secondary w-100 text-start py-2 px-3 small" for="grindFine">
+                            <i class="fas fa-fire me-1"></i> Halus (Espresso/Tubruk)
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 3. Ekspedisi & Pembayaran -->
+                  <div class="row g-3 mb-4">
+                    <div class="col-12">
+                      <h6 class="text-uppercase fw-bold text-secondary small border-start border-3 border-warning ps-2">Pengiriman & Pembayaran</h6>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="orderShipping" class="form-label">Kurir Ekspedisi Pengiriman <span class="text-danger">*</span></label>
+                      <select class="form-select" id="orderShipping" required>
+                        <option value="jne" selected>JNE Reguler (Rp 18.000 / 2-3 hari)</option>
+                        <option value="sicepat">SiCepat Regular (Rp 16.000 / 2-3 hari)</option>
+                        <option value="jnt">J&T Express (Rp 17.000 / 2-3 hari)</option>
+                        <option value="gosend">GoSend Instant Jogja (Rp 25.000 / Hari Ini)</option>
+                        <option value="ambil-sendiri">Ambil di Roastery Malioboro (Gratis Rp 0)</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="orderPayment" class="form-label">Metode Pembayaran <span class="text-danger">*</span></label>
+                      <select class="form-select" id="orderPayment" required>
+                        <option value="bca" selected>Transfer Bank BCA (Virtual Account / Rekening)</option>
+                        <option value="mandiri">Transfer Bank Mandiri</option>
+                        <option value="bni">Transfer Bank BNI</option>
+                        <option value="qris">QRIS (GoPay, OVO, ShopeePay, Dana, LinkAja)</option>
+                        <option value="cod">COD (Bayar Tunai di Tempat ke Kurir)</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label for="orderNotes" class="form-label">Catatan Tambahan untuk Roastery / Kurir (Opsional)</label>
+                      <input type="text" class="form-control" id="orderNotes" placeholder="Contoh: Titipkan di pos satpam jika rumah sedang kosong.">
+                    </div>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <div class="pt-3 border-top">
+                    <button type="submit" class="btn btn-coffee-primary btn-lg w-100 shadow">
+                      <i class="fas fa-check-circle me-2"></i> Konfirmasi & Proses Transaksi Pemesanan
+                    </button>
+                    <p class="text-center text-muted small mt-2 mb-0">
+                      <i class="fas fa-lock text-success me-1"></i> Data Anda dienkripsi dan terlindungi dengan aman.
+                    </p>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+
+            <!-- Right: Order Summary & Promo Code (Sticky Column) -->
+            <div class="col-lg-4">
+              <div class="order-summary-box shadow-sm sticky-top" style="top: 100px;">
+                <h5 class="font-heading mb-3 border-bottom pb-2">
+                  <i class="fas fa-receipt text-warning me-2"></i>Ringkasan Transaksi
+                </h5>
+
+                <!-- Promo Voucher Input -->
+                <div class="mb-4">
+                  <label for="promoCode" class="form-label small fw-bold">Punya Kode Promo / Voucher?</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control text-uppercase font-monospace" id="promoCode" placeholder="DISKON30">
+                    <button class="btn btn-dark" type="button" id="btnApplyPromo">Terapkan</button>
+                  </div>
+                  <div id="promoFeedback" class="d-none"></div>
+                  <div class="mt-2 text-muted small">
+                    <i class="fas fa-tags text-warning me-1"></i> Kode aktif: <span class="badge bg-secondary font-monospace">DISKON30</span> (Diskon 30%) atau <span class="badge bg-secondary font-monospace">GRATISONGKIR</span>
+                  </div>
+                </div>
+
+                <!-- Price Breakdown List -->
+                <ul class="list-unstyled mb-4 d-flex flex-column gap-2 small">
+                  <li class="d-flex justify-content-between">
+                    <span class="text-muted">Harga Satuan Produk:</span>
+                    <strong id="summaryItemPrice">Rp 125.000</strong>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    <span class="text-muted">Subtotal Produk:</span>
+                    <strong id="summarySubtotal">Rp 125.000</strong>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    <span class="text-muted">Biaya Ongkos Kirim:</span>
+                    <strong id="summaryShipping">Rp 18.000</strong>
+                  </li>
+                  <li class="d-flex justify-content-between text-success">
+                    <span>Potongan Diskon Promo:</span>
+                    <strong id="summaryDiscount">- Rp 0</strong>
+                  </li>
+                  <li class="border-top pt-2 mt-2 d-flex justify-content-between align-items-center">
+                    <span class="fs-6 fw-bold text-dark">Total Tagihan:</span>
+                    <span class="fs-4 fw-bold text-danger" id="summaryTotal">Rp 143.000</span>
+                  </li>
+                </ul>
+
+                <!-- Guarantee Box -->
+                <div class="p-3 bg-white rounded-3 border small">
+                  <div class="d-flex align-items-center gap-2 mb-1 text-success fw-bold">
+                    <i class="fas fa-shield-alt"></i> Jaminan Roastery Kopi Nusantara
+                  </div>
+                  <p class="text-muted mb-0">
+                    Jika biji kopi yang diterima rusak atau tidak sesuai profil roasting yang dipesan, kami ganti 100% tanpa dipungut biaya retur.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 2: PENDAFTARAN MEMBERSHIP VIP KOMUNITAS
+             =================================================================== -->
+        <div class="tab-pane fade" id="content-member" role="tabpanel" aria-labelledby="tab-member">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="form-card">
+                <div class="text-center mb-4">
+                  <div class="feature-icon mx-auto mb-2" style="width: 55px; height: 55px; font-size: 1.5rem;">
+                    <i class="fas fa-id-card"></i>
+                  </div>
+                  <h3 class="font-heading mb-1">Registrasi Member VIP Komunitas</h3>
+                  <p class="text-muted small">
+                    Dapatkan akses eksklusif ke sesi cupping gratis setiap bulan, diskon member tetap 10% di roastery, dan undangan workshop barista.
+                  </p>
+                </div>
+
+                <form id="formMemberRegistration" novalidate>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="memberName" class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="memberName" placeholder="Nama Anda" required>
+                      <div class="invalid-feedback">Nama wajib diisi.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="memberPhone" class="form-label">Nomor WhatsApp Aktif <span class="text-danger">*</span></label>
+                      <input type="tel" class="form-control" id="memberPhone" placeholder="08xxxxxxxxxx" required>
+                      <div class="invalid-feedback">Nomor WhatsApp wajib diisi.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="memberEmail" class="form-label">Email Aktif <span class="text-danger">*</span></label>
+                      <input type="email" class="form-control" id="memberEmail" placeholder="nama@email.com" required>
+                      <div class="invalid-feedback">Email valid wajib diisi.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="memberCity" class="form-label">Kota Domisili <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="memberCity" placeholder="Contoh: Yogyakarta / Jakarta" required>
+                      <div class="invalid-feedback">Kota domisili wajib diisi.</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label class="form-label d-block">Metode Seduh yang Paling Sering Digunakan</label>
+                      <div class="row g-2">
+                        <div class="col-6 col-md-3">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="brewV60" checked>
+                            <label class="form-check-label small" for="brewV60">V60 / Pour Over</label>
+                          </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="brewEspresso">
+                            <label class="form-check-label small" for="brewEspresso">Mesin Espresso</label>
+                          </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="brewAeropress">
+                            <label class="form-check-label small" for="brewAeropress">Aeropress</label>
+                          </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="brewFrenchPress">
+                            <label class="form-check-label small" for="brewFrenchPress">Tubruk / French Press</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="memberMotivation" class="form-label">Tujuan Bergabung Komunitas</label>
+                      <textarea class="form-control" id="memberMotivation" rows="3" placeholder="Contoh: Ingin memperdalam kalibrasi rasa dan mengikuti sesi cupping mingguan..."></textarea>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="agreeCommunityRules" required>
+                        <label class="form-check-label small" for="agreeCommunityRules">
+                          Saya bersedia menaati etika komunitas dan siap saling berbagi informasi positif tentang kopi nusantara. <span class="text-danger">*</span>
+                        </label>
+                        <div class="invalid-feedback">Anda harus menyetujui aturan komunitas.</div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 pt-3">
+                      <button type="submit" class="btn btn-warning btn-lg w-100 fw-bold text-dark shadow">
+                        <i class="fas fa-user-plus me-1"></i> Daftar Sebagai Member VIP Komunitas (Gratis)
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 3: FORMULIR UMPAN BALIK & MASUKAN
+             =================================================================== -->
+        <div class="tab-pane fade" id="content-feedback" role="tabpanel" aria-labelledby="tab-feedback">
+          <div class="row justify-content-center">
+            <div class="col-lg-7">
+              <div class="form-card">
+                <div class="text-center mb-4">
+                  <div class="feature-icon mx-auto mb-2" style="width: 55px; height: 55px; font-size: 1.5rem;">
+                    <i class="fas fa-heart"></i>
+                  </div>
+                  <h3 class="font-heading mb-1">Formulir Umpan Balik Pelanggan</h3>
+                  <p class="text-muted small">
+                    Masukan dan saran Anda adalah bahan bakar kami untuk terus meningkatkan mutu sangrai dan layanan roastery.
+                  </p>
+                </div>
+
+                <form id="formFeedback">
+                  <div class="mb-3">
+                    <label for="fbName" class="form-label">Nama Anda</label>
+                    <input type="text" class="form-control" id="fbName" placeholder="Contoh: Rian" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="fbProduct" class="form-label">Produk Kopi yang Pernah Dicoba</label>
+                    <select class="form-select" id="fbProduct">
+                      <option>Aceh Gayo Wine Process</option>
+                      <option>Toraja Sapan Specialty</option>
+                      <option>Flores Bajawa Honey</option>
+                      <option>Bali Kintamani Natural</option>
+                      <option>Temanggung Robusta Fine</option>
+                      <option>Lainnya / Pelayanan Kafe</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label d-block">Tingkat Kepuasan Rasa & Layanan</label>
+                    <div class="d-flex gap-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ratingSatisfied" id="rate5" checked>
+                        <label class="form-check-label text-warning fw-bold" for="rate5"><i class="fas fa-star"></i> 5 (Sangat Puas)</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ratingSatisfied" id="rate4">
+                        <label class="form-check-label text-warning fw-bold" for="rate4"><i class="fas fa-star"></i> 4 (Puas)</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ratingSatisfied" id="rate3">
+                        <label class="form-check-label text-secondary fw-bold" for="rate3"><i class="fas fa-star"></i> 3 (Cukup)</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <label for="fbMessage" class="form-label">Ulasan, Kritik & Saran Konstruktif</label>
+                    <textarea class="form-control" id="fbMessage" rows="4" placeholder="Ceritakan pengalaman mencicipi rasa kopi kami atau saran untuk kemasan dan pengiriman..." required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-coffee-primary w-100 py-2">
+                    <i class="fas fa-paper-plane me-1"></i> Kirim Umpan Balik
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       MODAL: BUKTI TRANSAKSI PEMESANAN (INVOICE POPUP)
+       ========================================================================= -->
+  <div class="modal fade" id="modalOrderSuccess" tabindex="-1" aria-labelledby="modalOrderSuccessLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-4 border-0 shadow">
+        <div class="modal-header bg-success text-white p-4">
+          <div>
+            <h5 class="modal-title font-heading text-white mb-0" id="modalOrderSuccessLabel">
+              <i class="fas fa-check-circle me-2"></i>Transaksi Pemesanan Berhasil Dibuat!
+            </h5>
+            <small class="text-white-50">Silakan simpan invoice dan lakukan pembayaran sesuai petunjuk di bawah</small>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body p-4">
+          <!-- Invoice Box -->
+          <div class="border rounded-3 p-4 bg-light mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-3">
+              <div>
+                <h5 class="font-heading mb-0 text-dark">Kopi Nusantara Roastery</h5>
+                <small class="text-muted">Faktur Penjualan Online Resmi</small>
+              </div>
+              <div class="text-end">
+                <span class="badge bg-primary font-monospace fs-6" id="modalInvoiceNo">INV/KN/2026/000000</span>
+                <small class="d-block text-muted">Tanggal: Hari ini</small>
+              </div>
+            </div>
+
+            <div class="row g-3 small">
+              <div class="col-sm-6">
+                <span class="text-muted d-block">Penerima Pesanan:</span>
+                <strong id="modalCustomerName" class="fs-6 text-dark">-</strong>
+                <div id="modalCustomerPhone" class="text-secondary">-</div>
+                <div id="modalCustomerAddress" class="text-secondary mt-1">-</div>
+              </div>
+              <div class="col-sm-6 text-sm-end">
+                <span class="text-muted d-block">Metode Pembayaran Dipilih:</span>
+                <strong id="modalPaymentMethod" class="fs-6 text-primary">-</strong>
+                <div class="mt-2 text-muted">Status Pembayaran: <span class="badge bg-warning text-dark">Menunggu Pembayaran</span></div>
+              </div>
+            </div>
+
+            <hr class="my-3">
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="text-muted">Item Pesanan:</span>
+              <strong id="modalProductInfo" class="text-dark">-</strong>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="fw-bold fs-6">Total Pembayaran:</span>
+              <span class="fw-bold fs-4 text-danger" id="modalTotalAmount">Rp 0</span>
+            </div>
+          </div>
+
+          <!-- Payment Instructions -->
+          <div class="alert alert-info border-0 rounded-3 small mb-0">
+            <h6 class="fw-bold mb-1"><i class="fas fa-info-circle me-1"></i> Instruksi Langkah Selanjutnya:</h6>
+            <ol class="ps-3 mb-0">
+              <li>Silakan transfer nominal total ke rekening <strong>BCA 123-456-7890</strong> a.n. <strong>PT Kopi Nusantara Mandiri</strong>.</li>
+              <li>Kirimkan bukti transfer pembayaran ke WhatsApp admin roastery kami di <strong>+62 812-3456-7890</strong>.</li>
+              <li>Pesanan Anda akan disangrai segar dan dikirimkan dengan nomor resi kurir dalam 1x24 jam.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="modal-footer p-3 bg-light border-0">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button type="button" class="btn btn-primary" onclick="window.print()">
+            <i class="fas fa-print me-1"></i> Cetak Bukti Invoice
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL: REGISTRASI MEMBER VIP BERHASIL
+       ========================================================================= -->
+  <div class="modal fade" id="modalMemberSuccess" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow text-center p-4">
+        <div class="my-3">
+          <div class="feature-icon mx-auto bg-warning-subtle text-dark" style="width: 70px; height: 70px; font-size: 2rem;">
+            <i class="fas fa-award"></i>
+          </div>
+        </div>
+        <h4 class="font-heading mb-2">Selamat Bergabung!</h4>
+        <p class="text-secondary small mb-3">
+          Hai <strong id="modalMemberSuccessName">Member</strong>, keanggotaan VIP Anda di Komunitas Kopi Nusantara telah aktif.
+        </p>
+        <div class="p-3 bg-light rounded-3 border mb-3">
+          <small class="text-muted d-block">Nomor Kartu Member Virtual:</small>
+          <span class="fs-4 fw-bold font-monospace text-primary" id="modalMemberId">KN-VIP-0000</span>
+        </div>
+        <p class="small text-muted mb-4">
+          Tunjukkan nomor kartu ini saat berkunjung ke Roastery Malioboro untuk menikmati diskon 10% dan tiket cupping gratis.
+        </p>
+        <button type="button" class="btn btn-coffee-primary w-100" data-bs-dismiss="modal">
+          Mulai Jelajahi Komunitas
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-coffee">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="brand-icon-wrapper"><i class="fas fa-mug-hot"></i></span>
+            <span class="fs-4 fw-bold font-heading text-white">Kopi Nusantara</span>
+          </div>
+          <p class="small text-secondary mb-3">
+            Roastery kopi specialty artisan terdepan di Indonesia. Kami mendedikasikan diri untuk melestarikan dan mengangkat kualitas kopi nusantara dengan prinsip perdagangan adil (Fair Trade) dan sangrai segar berkualitas tinggi.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="javascript:void(0)" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="javascript:void(0)" class="footer-social-btn"><i class="fab fa-youtube"></i></a>
+            <a href="javascript:void(0)" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="javascript:void(0)" class="footer-social-btn"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="text-white">Navigasi Halaman</h5>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="index.html"><i class="fas fa-angle-right me-1"></i> Beranda Utama</a></li>
+            <li><a href="profil.html"><i class="fas fa-angle-right me-1"></i> Profil Perusahaan</a></li>
+            <li><a href="produk.html"><i class="fas fa-angle-right me-1"></i> Katalog Penjualan</a></li>
+            <li><a href="forum.html"><i class="fas fa-angle-right me-1"></i> Forum & Diskusi</a></li>
+            <li><a href="transaksi.html"><i class="fas fa-angle-right me-1"></i> Formulir Pemesanan</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-white">Koleksi Produk</h5>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="produk.html"><i class="fas fa-coffee me-1"></i> Arabika Single Origin</a></li>
+            <li><a href="produk.html"><i class="fas fa-coffee me-1"></i> Robusta Fine Temanggung</a></li>
+            <li><a href="produk.html"><i class="fas fa-filter me-1"></i> Peralatan Seduh Manual (V60)</a></li>
+            <li><a href="produk.html"><i class="fas fa-box-open me-1"></i> Paket Bundling Hemat Barista</a></li>
+            <li><a href="transaksi.html"><i class="fas fa-award me-1"></i> Pendaftaran Membership VIP</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-white">Kontak & Workshop</h5>
+          <ul class="list-unstyled small text-secondary d-flex flex-column gap-2 mb-0">
+            <li><i class="fas fa-map-marker-alt text-warning me-2"></i> Jl. Malioboro No. 88, Danurejan, Kota Yogyakarta, D.I. Yogyakarta 55213</li>
+            <li><i class="fas fa-phone-alt text-warning me-2"></i> +62 812-3456-7890 (Layanan Pelanggan)</li>
+            <li><i class="fas fa-envelope text-warning me-2"></i> halo@kopinusantara.id</li>
+            <li><i class="fas fa-clock text-warning me-2"></i> Buka Setiap Hari: 08.00 - 22.00 WIB</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+        <p class="mb-2 mb-md-0">&copy; 2026 Kopi Nusantara Roastery. Dibuat untuk Proyek UAS Pemrograman Web 1.</p>
+        <div>
+          <span class="text-muted me-3">Didesain dengan Bootstrap 5 & Font Awesome</span>
+          <a href="transaksi.html" class="text-warning text-decoration-none">Formulir Transaksi &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forum & Komunitas Barista | Kopi Nusantara</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar-promo text-center">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <div class="d-none d-md-block">
+        <i class="fas fa-users text-warning me-1"></i> Komunitas Kopi Specialty Terbesar dengan 12.000+ Member Aktif
+      </div>
+      <div class="mx-auto mx-md-0">
+        Jadwal Cupping Session Terdekat: Sabtu ini pukul 14.00 WIB di Roastery Jogja!
+      </div>
+      <div class="d-none d-lg-block">
+        <a href="transaksi.html" class="text-white text-decoration-none">Daftar Member VIP &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Responsive Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-icon-wrapper">
+          <i class="fas fa-mug-hot"></i>
+        </span>
+        <span>Kopi Nusantara</span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars fa-lg text-dark"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <i class="fas fa-home me-1"></i> Beranda
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profil.html">
+              <i class="fas fa-building me-1"></i> Profil Roastery
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="produk.html">
+              <i class="fas fa-coffee me-1"></i> Katalog Penjualan
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="forum.html">
+              <i class="fas fa-comments me-1"></i> Forum Komunitas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="transaksi.html">
+              <i class="fas fa-file-invoice-dollar me-1"></i> Formulir Order
+            </a>
+          </li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-nav-order" href="transaksi.html">
+              <i class="fas fa-shopping-cart me-1"></i> Beli Online
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Community Hero Header -->
+  <header class="py-5" style="background: linear-gradient(rgba(26, 18, 11, 0.9), rgba(26, 18, 11, 0.9)), url('https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; color: #fff;">
+    <div class="container py-3">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <span class="badge bg-warning text-dark px-3 py-2 mb-3 fw-bold"><i class="fas fa-coffee me-1"></i> RUANG BERBAGI KOPI INDONESIA</span>
+          <h1 class="display-5 font-heading text-white mb-3">Forum Komunitas Pecinta Kopi Nusantara</h1>
+          <p class="lead text-light mb-4">
+            Wadah diskusi terbuka bagi home brewers, roasters, barista, dan penikmat kopi untuk bertukar resep seduh, ulasan alat, serta wawasan mendalam tentang cita rasa biji kopi nusantara.
+          </p>
+          <div class="d-flex flex-wrap gap-4 text-light">
+            <div><i class="fas fa-user-check text-warning me-2"></i><strong>12.450+</strong> Member Terdaftar</div>
+            <div><i class="fas fa-comment-dots text-warning me-2"></i><strong>3.820+</strong> Resep Seduh Dibagikan</div>
+            <div><i class="fas fa-map-marked-alt text-warning me-2"></i><strong>45+</strong> Kota di Indonesia</div>
+          </div>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+          <button class="btn btn-warning btn-lg fw-bold shadow-lg text-dark" data-bs-toggle="modal" data-bs-target="#modalNewTopic">
+            <i class="fas fa-pen me-2"></i> Buat Diskusi Baru
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Forum Main Layout (Cards Component & Responsive Sidebar) -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Left Column: Discussion Threads Feed -->
+        <div class="col-lg-8">
+
+          <!-- Category Pill Filter -->
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <button class="btn btn-coffee-primary btn-sm active rounded-pill px-3">Semua Kategori</button>
+            <button class="btn btn-outline-secondary btn-sm rounded-pill px-3">Teknik Manual Brew</button>
+            <button class="btn btn-outline-secondary btn-sm rounded-pill px-3">Profil Roasting</button>
+            <button class="btn btn-outline-secondary btn-sm rounded-pill px-3">Review Rasa & Cupping</button>
+            <button class="btn btn-outline-secondary btn-sm rounded-pill px-3">Tanya Jawab Barista</button>
+          </div>
+
+          <!-- Thread Feed Container (Interactive with script.js) -->
+          <div id="forumThreadContainer">
+
+            <!-- Thread 1 -->
+            <div class="forum-card">
+              <div class="d-flex align-items-start gap-3">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Siti Rahma" class="author-avatar">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-center mb-1 flex-wrap">
+                    <div>
+                      <strong class="text-dark">Siti Rahma</strong>
+                      <span class="badge bg-warning text-dark ms-2"><i class="fas fa-crown me-1"></i>Head Barista</span>
+                    </div>
+                    <small class="text-muted"><i class="far fa-clock me-1"></i>2 jam yang lalu</small>
+                  </div>
+                  <h5 class="font-heading mb-2">
+                    <a href="javascript:void(0)" class="text-decoration-none text-dark">Rasio Seduh & Suhu Air Terbaik untuk Aceh Gayo Wine Process pada V60</a>
+                  </h5>
+                  <div class="mb-3">
+                    <span class="tag-badge"><i class="fas fa-tag me-1"></i>Teknik Manual Brew</span>
+                    <span class="tag-badge"><i class="fas fa-flask me-1"></i>V60 Pour Over</span>
+                    <span class="tag-badge text-success"><i class="fas fa-check-circle me-1"></i>Resep Rekomendasi</span>
+                  </div>
+                  <p class="text-secondary mb-3">
+                    Halo teman-teman seduh! Bagi kalian yang baru membeli batch Gayo Wine bulan ini, coba gunakan rasio 1:15 (15g kopi : 225ml air mineral TDS 85). Suhu air cukup di 90°C dengan 3 kali pouring bertahap: blooming 45ml (40 detik), pour kedua 90ml melingkar perlahan, dan pour ketiga s/d 225ml di tengah. Rasa blackcurrant dan aroma fermentasi buah peach akan keluar maksimal tanpa rasa getir! Ada yang sudah coba?
+                  </p>
+                  <div class="d-flex align-items-center justify-content-between pt-2 border-top flex-wrap gap-2">
+                    <div class="d-flex gap-2">
+                      <button class="like-btn btn-sm">
+                        <i class="far fa-heart me-1"></i> <span class="like-count">48</span> Suka
+                      </button>
+                      <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+                        <i class="far fa-comment me-1"></i> 19 Komentar
+                      </button>
+                    </div>
+                    <small class="text-muted"><i class="fas fa-eye me-1"></i>412 Dilihat</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thread 2 -->
+            <div class="forum-card">
+              <div class="d-flex align-items-start gap-3">
+                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=200&q=80" alt="Reza Firmansyah" class="author-avatar">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-center mb-1 flex-wrap">
+                    <div>
+                      <strong class="text-dark">Reza Firmansyah</strong>
+                      <span class="badge bg-secondary-subtle text-secondary-emphasis ms-2">Member Aktif</span>
+                    </div>
+                    <small class="text-muted"><i class="far fa-clock me-1"></i>6 jam yang lalu</small>
+                  </div>
+                  <h5 class="font-heading mb-2">
+                    <a href="javascript:void(0)" class="text-decoration-none text-dark">Kalibrasi Grind Size Toraja Sapan untuk Espresso Mesin Komersial</a>
+                  </h5>
+                  <div class="mb-3">
+                    <span class="tag-badge"><i class="fas fa-tag me-1"></i>Espresso Calibration</span>
+                    <span class="tag-badge"><i class="fas fa-cog me-1"></i>Toraja Sapan</span>
+                  </div>
+                  <p class="text-secondary mb-3">
+                    Mau berbagi pengalaman setup kopi Toraja Sapan di kedai saya. Saya menggunakan dose 18.5 gram basket VST dengan yield 36 gram dalam waktu ekstraksi 28 detik pada tekanan 9 bar. Hasil cremanya sangat padat berwarna hazelnut cokelat, dan rasa dark chocolate serta rempah manisnya sangat dominan saat dicampur susu segar 150ml.
+                  </p>
+                  <div class="d-flex align-items-center justify-content-between pt-2 border-top flex-wrap gap-2">
+                    <div class="d-flex gap-2">
+                      <button class="like-btn btn-sm">
+                        <i class="far fa-heart me-1"></i> <span class="like-count">32</span> Suka
+                      </button>
+                      <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+                        <i class="far fa-comment me-1"></i> 14 Komentar
+                      </button>
+                    </div>
+                    <small class="text-muted"><i class="fas fa-eye me-1"></i>280 Dilihat</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thread 3 -->
+            <div class="forum-card">
+              <div class="d-flex align-items-start gap-3">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Budi Santoso" class="author-avatar">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-center mb-1 flex-wrap">
+                    <div>
+                      <strong class="text-dark">Budi Santoso</strong>
+                      <span class="badge bg-primary text-white ms-2"><i class="fas fa-fire me-1"></i>Master Roaster</span>
+                    </div>
+                    <small class="text-muted"><i class="far fa-clock me-1"></i>1 hari yang lalu</small>
+                  </div>
+                  <h5 class="font-heading mb-2">
+                    <a href="javascript:void(0)" class="text-decoration-none text-dark">Berapa Lama Waktu Degassing Terbaik Setelah Kopi Disangrai?</a>
+                  </h5>
+                  <div class="mb-3">
+                    <span class="tag-badge"><i class="fas fa-tag me-1"></i>Roasting Knowledge</span>
+                    <span class="tag-badge"><i class="fas fa-book me-1"></i>Tips Penyimpanan</span>
+                  </div>
+                  <p class="text-secondary mb-3">
+                    Banyak kawan yang bertanya apakah kopi yang baru disangrai bisa langsung diseduh? Jawabannya adalah sebaiknya istirahatkan biji kopi terlebih dahulu. Untuk profil Light roast (filter), waktu ideal degassing adalah hari ke-7 hingga hari ke-21 pasca roasting. Gas CO2 yang masih terjebak di dalam sel kopi akan keluar secara alami melalui one-way valve kemasan, sehingga proses blooming saat diseduh akan jauh lebih stabil dan tidak menghasilkan rasa pahit karbonik.
+                  </p>
+                  <div class="d-flex align-items-center justify-content-between pt-2 border-top flex-wrap gap-2">
+                    <div class="d-flex gap-2">
+                      <button class="like-btn btn-sm">
+                        <i class="far fa-heart me-1"></i> <span class="like-count">76</span> Suka
+                      </button>
+                      <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+                        <i class="far fa-comment me-1"></i> 38 Komentar
+                      </button>
+                    </div>
+                    <small class="text-muted"><i class="fas fa-eye me-1"></i>895 Dilihat</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thread 4 -->
+            <div class="forum-card">
+              <div class="d-flex align-items-start gap-3">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Anindya Putri" class="author-avatar">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-center mb-1 flex-wrap">
+                    <div>
+                      <strong class="text-dark">Anindya Putri</strong>
+                      <span class="badge bg-secondary-subtle text-secondary-emphasis ms-2">Home Brewer</span>
+                    </div>
+                    <small class="text-muted"><i class="far fa-clock me-1"></i>2 hari yang lalu</small>
+                  </div>
+                  <h5 class="font-heading mb-2">
+                    <a href="javascript:void(0)" class="text-decoration-none text-dark">Rekomendasi Air Mineral Kemasan Lokal untuk Seduh Kopi Single Origin</a>
+                  </h5>
+                  <div class="mb-3">
+                    <span class="tag-badge"><i class="fas fa-tag me-1"></i>Water Chemistry</span>
+                    <span class="tag-badge"><i class="fas fa-tint me-1"></i>TDS & Mineral</span>
+                  </div>
+                  <p class="text-secondary mb-3">
+                    Mau sharing hasil uji TDS beberapa air mineral kemasan di minimarket untuk seduh Bali Kintamani. Air dengan TDS di rentang 70-110 ppm memberikan clarity rasa buah jeruk yang jauh lebih bersih dibanding air bermineral tinggi di atas 180 ppm. Ada yang pakai air khusus racikan Lotus Water juga di sini?
+                  </p>
+                  <div class="d-flex align-items-center justify-content-between pt-2 border-top flex-wrap gap-2">
+                    <div class="d-flex gap-2">
+                      <button class="like-btn btn-sm">
+                        <i class="far fa-heart me-1"></i> <span class="like-count">24</span> Suka
+                      </button>
+                      <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+                        <i class="far fa-comment me-1"></i> 11 Komentar
+                      </button>
+                    </div>
+                    <small class="text-muted"><i class="fas fa-eye me-1"></i>315 Dilihat</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Sidebar (Community Info & Schedules) -->
+        <div class="col-lg-4">
+
+          <!-- Agenda Cupping & Meetup Offline -->
+          <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-white">
+            <h5 class="font-heading mb-3"><i class="fas fa-calendar-alt text-warning me-2"></i>Agenda Komunitas</h5>
+            <div class="border-start border-3 border-primary ps-3 mb-3">
+              <span class="badge bg-danger-subtle text-danger mb-1">Sabtu Ini, 14.00 WIB</span>
+              <h6 class="fw-bold mb-1">Public Cupping Session Batch Panen Baru</h6>
+              <p class="small text-muted mb-0">Lokasi: Roastery Lab Malioboro Jogja. Gratis untuk member terdaftar.</p>
+            </div>
+            <div class="border-start border-3 border-warning ps-3 mb-3">
+              <span class="badge bg-warning-subtle text-dark mb-1">Minggu Depan, 19.30 WIB</span>
+              <h6 class="fw-bold mb-1">Webinar: Sensorik Kopi Fermentasi</h6>
+              <p class="small text-muted mb-0">Live via Zoom bersama Hendra Wijaya (SCA Agronomist).</p>
+            </div>
+            <a href="transaksi.html" class="btn btn-coffee-outline btn-sm w-100 mt-2">
+              <i class="fas fa-id-card me-1"></i> Daftar Membership VIP Komunitas
+            </a>
+          </div>
+
+          <!-- Top Kontributor -->
+          <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-white">
+            <h5 class="font-heading mb-3"><i class="fas fa-trophy text-warning me-2"></i>Top Barista Bulan Ini</h5>
+            <div class="d-flex align-items-center gap-3 mb-3 pb-2 border-bottom">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Siti Rahma" class="rounded-circle" style="width: 44px; height: 44px; object-fit: cover;">
+              <div class="flex-grow-1">
+                <h6 class="mb-0 fw-bold">Siti Rahma</h6>
+                <small class="text-muted">42 Solusi Seduh Terjawab</small>
+              </div>
+              <span class="badge bg-warning text-dark"><i class="fas fa-medal"></i> #1</span>
+            </div>
+            <div class="d-flex align-items-center gap-3 mb-3 pb-2 border-bottom">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Budi Santoso" class="rounded-circle" style="width: 44px; height: 44px; object-fit: cover;">
+              <div class="flex-grow-1">
+                <h6 class="mb-0 fw-bold">Budi Santoso</h6>
+                <small class="text-muted">28 Artikel Roasting</small>
+              </div>
+              <span class="badge bg-secondary-subtle text-dark">#2</span>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=150&q=80" alt="Reza Firmansyah" class="rounded-circle" style="width: 44px; height: 44px; object-fit: cover;">
+              <div class="flex-grow-1">
+                <h6 class="mb-0 fw-bold">Reza Firmansyah</h6>
+                <small class="text-muted">19 Ulasan Peralatan</small>
+              </div>
+              <span class="badge bg-secondary-subtle text-dark">#3</span>
+            </div>
+          </div>
+
+          <!-- Panduan Etika Komunitas -->
+          <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+            <h5 class="font-heading mb-3"><i class="fas fa-shield-alt text-success me-2"></i>Tata Tertib Komunitas</h5>
+            <ul class="text-muted small ps-3 mb-0 d-flex flex-column gap-2">
+              <li>Saling menghormati preferensi selera seduh setiap orang. Tidak ada kopi yang salah, hanya selera yang beragam.</li>
+              <li>Sertakan data lengkap (suhu air, rasio gramatur, jenis grinder) saat membagikan resep seduh.</li>
+              <li>Dilarang melakukan spam promosi produk ilegal atau di luar konteks kopi nusantara.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal: Buat Diskusi Baru -->
+  <div class="modal fade" id="modalNewTopic" tabindex="-1" aria-labelledby="modalNewTopicLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-4 border-0 shadow">
+        <div class="modal-header bg-dark text-white p-4">
+          <h5 class="modal-title font-heading text-white" id="modalNewTopicLabel">
+            <i class="fas fa-edit text-warning me-2"></i>Mulai Topik Diskusi Baru
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="formNewThread">
+            <div class="mb-3">
+              <label for="threadAuthor" class="form-label">Nama Lengkap / Panggilan Anda <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="threadAuthor" placeholder="Contoh: Dimas Aditya" required>
+            </div>
+            <div class="mb-3">
+              <label for="threadCategory" class="form-label">Kategori Diskusi <span class="text-danger">*</span></label>
+              <select class="form-select" id="threadCategory" required>
+                <option value="Teknik Manual Brew" selected>Teknik Manual Brew (V60, Aeropress, Kalita)</option>
+                <option value="Espresso & Kalibrasi">Espresso & Kalibrasi Mesin</option>
+                <option value="Roasting & Green Beans">Roasting & Pengetahuan Green Beans</option>
+                <option value="Review Rasa Biji Kopi">Review Rasa & Cupping Notes</option>
+                <option value="Rekomendasi Alat Seduh">Rekomendasi Grinder & Alat Seduh</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="threadTitle" class="form-label">Judul Diskusi / Pertanyaan <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="threadTitle" placeholder="Contoh: Mengapa seduhan kopi Flores Bajawa saya terasa terlalu pahit?" required>
+            </div>
+            <div class="mb-3">
+              <label for="threadContent" class="form-label">Isi Detail Diskusi / Resep / Pertanyaan <span class="text-danger">*</span></label>
+              <textarea class="form-control" id="threadContent" rows="5" placeholder="Tuliskan detail pertanyaan, alat seduh yang dipakai, rasio kopi ke air, waktu seduh, atau catatan rasa Anda..." required></textarea>
+            </div>
+            <div class="d-flex justify-content-end gap-2 pt-2">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+              <button type="submit" class="btn btn-coffee-primary">
+                <i class="fas fa-paper-plane me-1"></i> Terbitkan Diskusi
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-coffee">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="brand-icon-wrapper"><i class="fas fa-mug-hot"></i></span>
+            <span class="fs-4 fw-bold font-heading text-white">Kopi Nusantara</span>
+          </div>
+          <p class="small text-secondary mb-3">
+            Roastery kopi specialty artisan terdepan di Indonesia. Kami mendedikasikan diri untuk melestarikan dan mengangkat kualitas kopi nusantara dengan prinsip perdagangan adil (Fair Trade) dan sangrai segar berkualitas tinggi.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="javascript:void(0)" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="javascript:void(0)" class="footer-social-btn"><i class="fab fa-youtube"></i></a>
+            <a href="javascript:void(0)" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="javascript:void(0)" class="footer-social-btn"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="text-white">Navigasi Halaman</h5>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="index.html"><i class="fas fa-angle-right me-1"></i> Beranda Utama</a></li>
+            <li><a href="profil.html"><i class="fas fa-angle-right me-1"></i> Profil Perusahaan</a></li>
+            <li><a href="produk.html"><i class="fas fa-angle-right me-1"></i> Katalog Penjualan</a></li>
+            <li><a href="forum.html"><i class="fas fa-angle-right me-1"></i> Forum & Diskusi</a></li>
+            <li><a href="transaksi.html"><i class="fas fa-angle-right me-1"></i> Formulir Pemesanan</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-white">Koleksi Produk</h5>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="produk.html"><i class="fas fa-coffee me-1"></i> Arabika Single Origin</a></li>
+            <li><a href="produk.html"><i class="fas fa-coffee me-1"></i> Robusta Fine Temanggung</a></li>
+            <li><a href="produk.html"><i class="fas fa-filter me-1"></i> Peralatan Seduh Manual (V60)</a></li>
+            <li><a href="produk.html"><i class="fas fa-box-open me-1"></i> Paket Bundling Hemat Barista</a></li>
+            <li><a href="transaksi.html"><i class="fas fa-award me-1"></i> Pendaftaran Membership VIP</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-white">Kontak & Workshop</h5>
+          <ul class="list-unstyled small text-secondary d-flex flex-column gap-2 mb-0">
+            <li><i class="fas fa-map-marker-alt text-warning me-2"></i> Jl. Malioboro No. 88, Danurejan, Kota Yogyakarta, D.I. Yogyakarta 55213</li>
+            <li><i class="fas fa-phone-alt text-warning me-2"></i> +62 812-3456-7890 (Layanan Pelanggan)</li>
+            <li><i class="fas fa-envelope text-warning me-2"></i> halo@kopinusantara.id</li>
+            <li><i class="fas fa-clock text-warning me-2"></i> Buka Setiap Hari: 08.00 - 22.00 WIB</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+        <p class="mb-2 mb-md-0">&copy; 2026 Kopi Nusantara Roastery. Dibuat untuk Proyek UAS Pemrograman Web 1.</p>
+        <div>
+          <span class="text-muted me-3">Didesain dengan Bootstrap 5 & Font Awesome</span>
+          <a href="transaksi.html" class="text-warning text-decoration-none">Formulir Transaksi &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

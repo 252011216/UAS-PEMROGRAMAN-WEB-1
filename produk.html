@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Penjualan Kopi Online | Kopi Nusantara Roastery</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar-promo text-center">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <div class="d-none d-md-block">
+        <i class="fas fa-truck text-warning me-1"></i> Gratis Ongkos Kirim dengan kode voucher: <span class="badge bg-light text-dark font-monospace">GRATISONGKIR</span>
+      </div>
+      <div class="mx-auto mx-md-0">
+        Garansi Roasting Baru: Biji kopi disangrai maksimal 7 hari sebelum dikirim.
+      </div>
+      <div class="d-none d-lg-block">
+        <a href="transaksi.html" class="text-white text-decoration-none">Cek Pesanan &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Responsive Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-icon-wrapper">
+          <i class="fas fa-mug-hot"></i>
+        </span>
+        <span>Kopi Nusantara</span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars fa-lg text-dark"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <i class="fas fa-home me-1"></i> Beranda
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profil.html">
+              <i class="fas fa-building me-1"></i> Profil Roastery
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="produk.html">
+              <i class="fas fa-coffee me-1"></i> Katalog Penjualan
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="forum.html">
+              <i class="fas fa-comments me-1"></i> Forum Komunitas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="transaksi.html">
+              <i class="fas fa-file-invoice-dollar me-1"></i> Formulir Order
+            </a>
+          </li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-nav-order" href="transaksi.html">
+              <i class="fas fa-shopping-cart me-1"></i> Beli Online
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="py-5" style="background: linear-gradient(135deg, #3e2723, #1a120b); color: #fff;">
+    <div class="container text-center py-3">
+      <span class="badge badge-promo px-3 py-2 mb-3"><i class="fas fa-shopping-basket me-1"></i> TOKO ONLINE ROASTERY RESMI</span>
+      <h1 class="display-5 font-heading text-white mb-2">Katalog Biji Kopi & Peralatan Seduh</h1>
+      <p class="text-light max-w-600 mx-auto mb-0">
+        Temukan kurasi biji kopi specialty single origin nusantara dan perlengkapan barista standar profesional dengan harga terbaik langsung dari roastery.
+      </p>
+    </div>
+  </header>
+
+  <!-- Product Filter & Search Bar -->
+  <section class="py-4 bg-white border-bottom">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <!-- Filter Buttons -->
+        <div class="col-lg-8">
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-coffee-primary active filter-btn" data-filter="all">Semua Koleksi</button>
+            <button class="btn btn-outline-secondary filter-btn" data-filter="arabika">Arabika Specialty</button>
+            <button class="btn btn-outline-secondary filter-btn" data-filter="robusta">Robusta Premium</button>
+            <button class="btn btn-outline-secondary filter-btn" data-filter="alat">Alat Seduh</button>
+            <button class="btn btn-outline-secondary filter-btn" data-filter="bundling">Paket Bundling</button>
+          </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="col-lg-4">
+          <div class="input-group">
+            <span class="input-group-text bg-light border-end-0"><i class="fas fa-search text-muted"></i></span>
+            <input type="text" id="searchProduct" class="form-control border-start-0 bg-light" placeholder="Cari nama kopi atau tasting notes...">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Grid (Cards Component - Responsive) -->
+  <section class="py-5">
+    <div class="container">
+      <!-- Empty message alert if no product matched -->
+      <div id="emptySearchMessage" class="alert alert-warning text-center py-4 my-4" style="display: none;">
+        <i class="fas fa-search fa-2x mb-3 text-warning"></i>
+        <h5>Produk Tidak Ditemukan</h5>
+        <p class="mb-0 text-muted">Ketik kata kunci lain seperti "Gayo", "Toraja", "V60", atau pilih tombol kategori "Semua Koleksi".</p>
+      </div>
+
+      <div class="row g-4" id="productListContainer">
+
+        <!-- Product 1: Aceh Gayo Wine -->
+        <div class="col-12 col-md-6 col-lg-3 product-item" data-category="arabika">
+          <div class="coffee-card">
+            <div class="card-img-wrapper">
+              <span class="badge badge-promo card-badge-floating">Best Seller</span>
+              <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=600&q=80" alt="Aceh Gayo Wine Process">
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-secondary-subtle text-dark">Arabika Specialty</span>
+                <small class="text-warning"><i class="fas fa-star"></i> 4.9 (128 ulasan)</small>
+              </div>
+              <h5 class="card-title">Aceh Gayo Wine Process</h5>
+              <div class="coffee-notes">
+                <i class="fas fa-wine-glass-alt text-danger me-1"></i> Notes: Blackcurrant, Peach, Honey Ferment
+              </div>
+              <p class="text-muted small flex-grow-1">Elevasi 1.500 mdpl Takengon. Profil sangrai Light to Medium. Body juicy dengan aftertaste wine yang kaya.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <div>
+                  <span class="coffee-price">Rp 125.000</span>
+                  <span class="d-block small text-muted">Kemasan 250g</span>
+                </div>
+                <a href="transaksi.html?produk=gayo-wine" class="btn btn-coffee-primary btn-sm">
+                  <i class="fas fa-cart-plus me-1"></i> Pesan
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: Toraja Sapan -->
+        <div class="col-12 col-md-6 col-lg-3 product-item" data-category="arabika">
+          <div class="coffee-card">
+            <div class="card-img-wrapper">
+              <span class="badge badge-roast card-badge-floating">Washed Process</span>
+              <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=600&q=80" alt="Toraja Sapan Specialty">
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-secondary-subtle text-dark">Arabika Toraja</span>
+                <small class="text-warning"><i class="fas fa-star"></i> 4.8 (95 ulasan)</small>
+              </div>
+              <h5 class="card-title">Toraja Sapan Specialty</h5>
+              <div class="coffee-notes">
+                <i class="fas fa-cookie-bite text-warning me-1"></i> Notes: Dark Chocolate, Spices, Herbal
+              </div>
+              <p class="text-muted small flex-grow-1">Ketinggian 1.800 mdpl lereng Sesean Toraja. Profil Medium Roast dengan cita rasa rempah hangat dan body tebal.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <div>
+                  <span class="coffee-price">Rp 115.000</span>
+                  <span class="d-block small text-muted">Kemasan 250g</span>
+                </div>
+                <a href="transaksi.html?produk=toraja-sapan" class="btn btn-coffee-primary btn-sm">
+                  <i class="fas fa-cart-plus me-1"></i> Pesan
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: Flores Bajawa Honey -->
+        <div class="col-12 col-md-6 col-lg-3 product-item" data-category="arabika">
+          <div class="coffee-card">
+            <div class="card-img-wrapper">
+              <span class="badge bg-success card-badge-floating">Yellow Honey</span>
+              <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80" alt="Flores Bajawa Honey">
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-secondary-subtle text-dark">Arabika Flores</span>
+                <small class="text-warning"><i class="fas fa-star"></i> 4.9 (82 ulasan)</small>
+              </div>
+              <h5 class="card-title">Flores Bajawa Honey</h5>
+              <div class="coffee-notes">
+                <i class="fas fa-seedling text-success me-1"></i> Notes: Caramel, Hazelnut, Red Apple
+              </div>
+              <p class="text-muted small flex-grow-1">Ditanam di tanah vulkanik subur Gunung Inerie. Tingkat keasaman seimbang dengan aroma manis karamel madu.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <div>
+                  <span class="coffee-price">Rp 105.000</span>
+                  <span class="d-block small text-muted">Kemasan 250g</span>
+                </div>
+                <a href="transaksi.html?produk=flores-bajawa" class="btn btn-coffee-primary btn-sm">
+                  <i class="fas fa-cart-plus me-1"></i> Pesan
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: Bali Kintamani Natural -->
+        <div class="col-12 col-md-6 col-lg-3 product-item" data-category="arabika">
+          <div class="coffee-card">
+            <div class="card-img-wrapper">
+              <span class="badge badge-roast card-badge-floating">Natural Process</span>
+              <img src="https://images.unsplash.com/photo-1610632380989-680fe40816c6?auto=format&fit=crop&w=600&q=80" alt="Bali Kintamani Natural">
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-secondary-subtle text-dark">Arabika Bali</span>
+                <small class="text-warning"><i class="fas fa-star"></i> 4.8 (74 ulasan)</small>
+              </div>
+              <h5 class="card-title">Bali Kintamani Natural</h5>
+              <div class="coffee-notes">
+                <i class="fas fa-lemon text-warning me-1"></i> Notes: Jeruk Mandarin, Jasmine, Sugarcane
+              </div>
+              <p class="text-muted small flex-grow-1">Karakter citrus jeruk khas pegunungan Kintamani bersanding dengan keharuman bunga melati yang menyegarkan.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <div>
+                  <span class="coffee-price">Rp 110.000</span>
+                  <span class="d-block small text-muted">Kemasan 250g</span>
+                </div>
+                <a href="transaksi.html?produk=kintamani-honey" class="btn btn-coffee-primary btn-sm">
+                  <i class="fas fa-cart-plus me-1"></i> Pesan
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5: Temanggung Robusta Fine -->
+        <div class="col-12 col-md-6 col-lg-3 product-item" data-category="robusta">
+          <div class="coffee-card">
+            <div class="card-img-wrapper">
+              <span class="badge bg-dark card-badge-floating">Dark Roast</span>
+              <img src="https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?auto=format&fit=crop&w=600&q=80" alt="Temanggung Robusta Fine">
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-secondary-subtle text-dark">Robusta Premium</span>
+                <small class="text-warning"><i class="fas fa-star"></i> 4.7 (63 ulasan)</small>
+              </div>
+              <h5 class="card-title">Temanggung Robusta Fine</h5>
+              <div class="coffee-notes">
+                <i class="fas fa-coffee text-dark me-1"></i> Notes: Roasted Almond, Cacao Nibs, Heavy Body
+              </div>
+              <p class="text-muted small flex-grow-1">Kopi Robusta petik merah kualitas ekspor dari lereng Gunung Sindoro. Crema tebal sempurna untuk racikan Es Kopi Susu.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <div>
+                  <span class="coffee-price">Rp 75.000</span>
+                  <span class="d-block small text-muted">Kemasan 250g</span>
+                </div>
+                <a href="transaksi.html?produk=temanggung-robusta" class="btn btn-coffee-primary btn-sm">
+                  <i class="fas fa-cart-plus me-1"></i> Pesan
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6: V60 Server Set -->
+        <div class="col-12 col-md-6 col-lg-3 product-item" data-category="alat">
+          <div class="coffee-card">
+            <div class="card-img-wrapper">
+              <span class="badge badge-promo card-badge-floating">Promo Alat</span>
+              <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=600&q=80" alt="V60 Coffee Server Set">
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-secondary-subtle text-dark">Alat Seduh Manual</span>
+                <small class="text-warning"><i class="fas fa-star"></i> 5.0 (40 ulasan)</small>
+              </div>
+              <h5 class="card-title">V60 Dripper & Server 02 Set</h5>
+              <div class="coffee-notes">
+                <i class="fas fa-flask text-info me-1"></i> Material: Heatproof Borosilicate Glass
+              </div>
+              <p class="text-muted small flex-grow-1">Set lengkap dripper corong spiral 02 dan teko server kaca 600ml. Dilengkapi sendok takar barista dan dudukan kayu.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <div>
+                  <span class="coffee-price">Rp 185.000</span>
+                  <span class="coffee-price-old">Rp 220.000</span>
+                </div>
+                <a href="transaksi.html?produk=v60-dripper-set" class="btn btn-coffee-primary btn-sm">
+                  <i class="fas fa-cart-plus me-1"></i> Pesan
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7: Manual Hand Grinder -->
+        <div class="col-12 col-md-6 col-lg-3 product-item" data-category="alat">
+          <div class="coffee-card">
+            <div class="card-img-wrapper">
+              <span class="badge bg-info text-dark card-badge-floating">CNC Stainless Burr</span>
+              <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80" alt="Manual Hand Grinder Stainless">
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-secondary-subtle text-dark">Penggiling Kopi</span>
+                <small class="text-warning"><i class="fas fa-star"></i> 4.9 (51 ulasan)</small>
+              </div>
+              <h5 class="card-title">Manual Grinder Precision 38mm</h5>
+              <div class="coffee-notes">
+                <i class="fas fa-cog text-secondary me-1"></i> Mata Pisau Stainless Steel Bintang Enam
+              </div>
+              <p class="text-muted small flex-grow-1">Grinder manual portabel dengan settingan klik presisi dari gilingan halus espresso hingga kasar cold brew.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <div>
+                  <span class="coffee-price">Rp 260.000</span>
+                  <span class="coffee-price-old">Rp 310.000</span>
+                </div>
+                <a href="transaksi.html?produk=manual-hand-grinder" class="btn btn-coffee-primary btn-sm">
+                  <i class="fas fa-cart-plus me-1"></i> Pesan
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8: Paket Bundling Barista -->
+        <div class="col-12 col-md-6 col-lg-3 product-item" data-category="bundling">
+          <div class="coffee-card">
+            <div class="card-img-wrapper">
+              <span class="badge badge-promo card-badge-floating">Paket Hemat Rp 85rb</span>
+              <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=600&q=80" alt="Paket Bundling Barista Starter Pack">
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-secondary-subtle text-dark">Paket Bundling</span>
+                <small class="text-warning"><i class="fas fa-star"></i> 5.0 (89 ulasan)</small>
+              </div>
+              <h5 class="card-title">Barista Starter Gift Pack</h5>
+              <div class="coffee-notes">
+                <i class="fas fa-gift text-danger me-1"></i> Isi: Gayo Wine 250g + V60 Set + 100 Paper Filter
+              </div>
+              <p class="text-muted small flex-grow-1">Paket lengkap siap seduh specialty coffee. Pilihan tepat untuk kado atau pemula yang baru memulai hobi seduh manual.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <div>
+                  <span class="coffee-price">Rp 340.000</span>
+                  <span class="coffee-price-old">Rp 425.000</span>
+                </div>
+                <a href="transaksi.html?produk=bundling-barista" class="btn btn-coffee-primary btn-sm">
+                  <i class="fas fa-cart-plus me-1"></i> Pesan
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Panduan Memilih Gilingan (Educational Section) -->
+  <section class="py-5 bg-white border-top">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge badge-roast mb-2">PANDUAN BARISTA</span>
+        <h2 class="font-heading">Bagaimana Menentukan Grind Size Kopi Anda?</h2>
+        <p class="text-muted">Setiap pesanan di Kopi Nusantara dapat digiling gratis sesuai metode seduh yang Anda pakai di rumah.</p>
+      </div>
+
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3">
+          <div class="p-4 rounded-4 border bg-light h-100">
+            <i class="fas fa-cubes fa-2x text-primary mb-3"></i>
+            <h6 class="fw-bold">Biji Utuh (Whole Beans)</h6>
+            <p class="small text-muted mb-0">Rekomendasi terbaik! Menjaga kesegaran rasa hingga 3-6 bulan jika Anda punya grinder sendiri di rumah.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 rounded-4 border bg-light h-100">
+            <i class="fas fa-glass-whiskey fa-2x text-warning mb-3"></i>
+            <h6 class="fw-bold">Giling Kasar (Coarse)</h6>
+            <p class="small text-muted mb-0">Tekstur seperti garam laut kasar. Sangat cocok untuk French Press, Cold Brew, dan Cupping Table.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 rounded-4 border bg-light h-100">
+            <i class="fas fa-filter fa-2x text-info mb-3"></i>
+            <h6 class="fw-bold">Giling Sedang (Medium)</h6>
+            <p class="small text-muted mb-0">Tekstur mirip pasir pantai. Sempurna untuk V60 Pour Over, Kalita Wave, Aeropress, dan Syphon.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 rounded-4 border bg-light h-100">
+            <i class="fas fa-fire fa-2x text-danger mb-3"></i>
+            <h6 class="fw-bold">Giling Halus (Fine)</h6>
+            <p class="small text-muted mb-0">Tekstur halus seperti tepung terigu. Ideal untuk Mesin Espresso komersial, Mokapot kompor, dan Kopi Tubruk.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-coffee">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="brand-icon-wrapper"><i class="fas fa-mug-hot"></i></span>
+            <span class="fs-4 fw-bold font-heading text-white">Kopi Nusantara</span>
+          </div>
+          <p class="small text-secondary mb-3">
+            Roastery kopi specialty artisan terdepan di Indonesia. Kami mendedikasikan diri untuk melestarikan dan mengangkat kualitas kopi nusantara dengan prinsip perdagangan adil (Fair Trade) dan sangrai segar berkualitas tinggi.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="javascript:void(0)" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="javascript:void(0)" class="footer-social-btn"><i class="fab fa-youtube"></i></a>
+            <a href="javascript:void(0)" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="javascript:void(0)" class="footer-social-btn"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="text-white">Navigasi Halaman</h5>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="index.html"><i class="fas fa-angle-right me-1"></i> Beranda Utama</a></li>
+            <li><a href="profil.html"><i class="fas fa-angle-right me-1"></i> Profil Perusahaan</a></li>
+            <li><a href="produk.html"><i class="fas fa-angle-right me-1"></i> Katalog Penjualan</a></li>
+            <li><a href="forum.html"><i class="fas fa-angle-right me-1"></i> Forum & Diskusi</a></li>
+            <li><a href="transaksi.html"><i class="fas fa-angle-right me-1"></i> Formulir Pemesanan</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-white">Koleksi Produk</h5>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="produk.html"><i class="fas fa-coffee me-1"></i> Arabika Single Origin</a></li>
+            <li><a href="produk.html"><i class="fas fa-coffee me-1"></i> Robusta Fine Temanggung</a></li>
+            <li><a href="produk.html"><i class="fas fa-filter me-1"></i> Peralatan Seduh Manual (V60)</a></li>
+            <li><a href="produk.html"><i class="fas fa-box-open me-1"></i> Paket Bundling Hemat Barista</a></li>
+            <li><a href="transaksi.html"><i class="fas fa-award me-1"></i> Pendaftaran Membership VIP</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-white">Kontak & Workshop</h5>
+          <ul class="list-unstyled small text-secondary d-flex flex-column gap-2 mb-0">
+            <li><i class="fas fa-map-marker-alt text-warning me-2"></i> Jl. Malioboro No. 88, Danurejan, Kota Yogyakarta, D.I. Yogyakarta 55213</li>
+            <li><i class="fas fa-phone-alt text-warning me-2"></i> +62 812-3456-7890 (Layanan Pelanggan)</li>
+            <li><i class="fas fa-envelope text-warning me-2"></i> halo@kopinusantara.id</li>
+            <li><i class="fas fa-clock text-warning me-2"></i> Buka Setiap Hari: 08.00 - 22.00 WIB</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+        <p class="mb-2 mb-md-0">&copy; 2026 Kopi Nusantara Roastery. Dibuat untuk Proyek UAS Pemrograman Web 1.</p>
+        <div>
+          <span class="text-muted me-3">Didesain dengan Bootstrap 5 & Font Awesome</span>
+          <a href="transaksi.html" class="text-warning text-decoration-none">Formulir Transaksi &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
